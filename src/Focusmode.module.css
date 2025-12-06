@@ -1,0 +1,152 @@
+.focusmode {
+  width: 100%;
+  height: 1024px;
+  position: relative;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  text-align: left;
+  font-size: 18px;
+  color: #f5f5f5;
+  font-family: Montserrat;
+}
+.navigation {
+  position: absolute;
+  top: 40px;
+  left: 80px;
+  width: 305px;
+  height: 944px;
+}
+.leftSide {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 30px;
+  background-color: #48a57f;
+}
+.help {
+  position: absolute;
+  width: 12.13%;
+  top: 87.92%;
+  left: 17.86%;
+  font-size: 14px;
+  display: inline-block;
+}
+.contactUs {
+  position: absolute;
+  width: 27.87%;
+  top: 91.84%;
+  left: 17.86%;
+  font-size: 14px;
+  display: inline-block;
+}
+.settings {
+  position: absolute;
+  width: 26.79%;
+  top: 37.08%;
+  left: 31.43%;
+  display: inline-block;
+}
+.schedules {
+  position: absolute;
+  width: 33.21%;
+  top: 30.51%;
+  left: 31.43%;
+  display: inline-block;
+}
+.focusmode2 {
+  position: absolute;
+  width: 41.08%;
+  top: 23.94%;
+  left: 31.43%;
+  display: inline-block;
+}
+.dashboard {
+  position: absolute;
+  width: 37.15%;
+  top: 17.37%;
+  left: 31.43%;
+  display: inline-block;
+}
+.transactionIcon {
+  position: absolute;
+  height: 2.2%;
+  width: 6.43%;
+  top: 23.94%;
+  right: 75.72%;
+  bottom: 73.86%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: contain;
+}
+.scheduleIcon {
+  position: absolute;
+  height: 1.91%;
+  width: 6.43%;
+  top: 30.72%;
+  right: 75.72%;
+  bottom: 67.37%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.dashboardIcon {
+  position: absolute;
+  height: 1.91%;
+  width: 6.43%;
+  top: 17.58%;
+  right: 75.72%;
+  bottom: 80.51%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.settingIcon {
+  position: absolute;
+  height: 1.91%;
+  width: 6.1%;
+  top: 37.29%;
+  right: 76.04%;
+  bottom: 60.81%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.timeflow {
+  position: absolute;
+  top: 6.36%;
+  left: calc(50% - 108.5px);
+  font-size: 36px;
+  display: inline-block;
+  width: 217px;
+}
+.focusmodeChild {
+  position: absolute;
+  top: 134px;
+  left: 493px;
+  border-radius: 25px;
+  background-color: #d9d9d9;
+  width: 759px;
+  height: 756px;
+  display: none;
+}
+.div {
+  position: absolute;
+  top: 375px;
+  left: 536px;
+  font-size: 128px;
+  color: #48a57f;
+}
+.iconifyIcons {
+  position: relative;
+  width: 128px;
+  height: 128px;
+}

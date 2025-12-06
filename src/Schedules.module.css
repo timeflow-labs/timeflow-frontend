@@ -1,0 +1,873 @@
+.schedules {
+  width: 100%;
+  height: 1024px;
+  position: relative;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  text-align: left;
+  font-size: 24px;
+  color: #000;
+  font-family: Montserrat;
+}
+.navigation {
+  position: absolute;
+  top: 40px;
+  left: 80px;
+  width: 305px;
+  height: 944px;
+  font-size: 18px;
+  color: #f5f5f5;
+}
+.leftSide {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 30px;
+  background-color: #48a57f;
+}
+.help {
+  position: absolute;
+  width: 12.13%;
+  top: 87.92%;
+  left: 17.86%;
+  font-size: 14px;
+  display: inline-block;
+}
+.contactUs {
+  position: absolute;
+  width: 27.87%;
+  top: 91.84%;
+  left: 17.86%;
+  font-size: 14px;
+  display: inline-block;
+}
+.settings {
+  position: absolute;
+  width: 26.79%;
+  top: 37.08%;
+  left: 31.43%;
+  display: inline-block;
+}
+.schedules2 {
+  position: absolute;
+  width: 33.21%;
+  top: 30.51%;
+  left: 31.43%;
+  display: inline-block;
+}
+.focusmode {
+  position: absolute;
+  width: 41.08%;
+  top: 23.94%;
+  left: 31.43%;
+  display: inline-block;
+}
+.dashboard {
+  position: absolute;
+  width: 37.15%;
+  top: 17.37%;
+  left: 31.43%;
+  display: inline-block;
+}
+.transactionIcon {
+  position: absolute;
+  height: 2.2%;
+  width: 6.43%;
+  top: 23.94%;
+  right: 75.72%;
+  bottom: 73.86%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: contain;
+}
+.scheduleIcon {
+  position: absolute;
+  height: 1.91%;
+  width: 6.43%;
+  top: 30.72%;
+  right: 75.72%;
+  bottom: 67.37%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.dashboardIcon {
+  position: absolute;
+  height: 1.91%;
+  width: 6.43%;
+  top: 17.58%;
+  right: 75.72%;
+  bottom: 80.51%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.settingIcon {
+  position: absolute;
+  height: 1.91%;
+  width: 6.1%;
+  top: 37.29%;
+  right: 76.04%;
+  bottom: 60.81%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.timeflow {
+  position: absolute;
+  top: 6.36%;
+  left: calc(50% - 108.5px);
+  font-size: 36px;
+  display: inline-block;
+  width: 217px;
+}
+.header {
+  position: absolute;
+  top: 50px;
+  left: 405px;
+  width: 894px;
+  height: 29px;
+}
+.schedules3 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  width: 129.8px;
+}
+.vectorIcon {
+  position: absolute;
+  height: 68.97%;
+  width: 1.91%;
+  top: 17.24%;
+  right: 0.01%;
+  bottom: 13.79%;
+  left: 98.08%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.schedulesCard {
+  position: absolute;
+  top: 144px;
+  left: 405px;
+  width: 1000px;
+  height: 546px;
+  text-align: center;
+  font-size: 12px;
+  font-family: Lato;
+}
+.leftCard {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 640px;
+  height: 546px;
+}
+.card2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 20px;
+  background-color: #fff;
+}
+.calendar {
+  position: absolute;
+  top: 29px;
+  left: 40px;
+  width: 560px;
+  height: 486px;
+}
+.days {
+  position: absolute;
+  top: 46px;
+  left: 0px;
+  width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.row {
+  width: 560px;
+  display: flex;
+  align-items: center;
+}
+.weekday {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.sunday {
+  width: 60px;
+  height: 20px;
+  position: relative;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.weekday4 {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.wednesday {
+  width: 70px;
+  height: 20px;
+  position: relative;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.header2 {
+  position: absolute;
+  top: 0.4px;
+  left: 0px;
+  width: 540px;
+  height: 29px;
+  text-align: left;
+  font-size: 24px;
+  font-family: Montserrat;
+}
+.dec2025 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.iconChevronRightParent {
+  position: absolute;
+  top: 2.6px;
+  right: 0px;
+  width: 52px;
+  height: 16px;
+}
+.iconChevronRight {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.2;
+}
+.iconChevronLeft {
+  position: absolute;
+  top: 0px;
+  right: 36px;
+  width: 16px;
+  height: 16px;
+}
+.days2 {
+  position: absolute;
+  top: 86px;
+  left: 0px;
+  width: 560px;
+  height: 400px;
+  font-size: 16px;
+}
+.dateDefault {
+  position: absolute;
+  top: -0.5px;
+  left: 159.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.div {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.dateDefault2 {
+  position: absolute;
+  top: 79.5px;
+  left: -0.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault3 {
+  position: absolute;
+  top: 159.5px;
+  left: -0.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault4 {
+  position: absolute;
+  top: 239.5px;
+  left: -0.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault5 {
+  position: absolute;
+  top: 319.5px;
+  left: -0.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault6 {
+  position: absolute;
+  top: 79.5px;
+  left: 159.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault7 {
+  position: absolute;
+  top: 159.5px;
+  left: 159.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault8 {
+  position: absolute;
+  top: 239.5px;
+  left: 159.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault9 {
+  position: absolute;
+  top: 319.5px;
+  left: 159.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateInactive {
+  position: absolute;
+  top: -0.5px;
+  left: -0.5px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: #9c8d8d;
+}
+.dateDefault10 {
+  position: absolute;
+  top: 79.5px;
+  left: 79.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault11 {
+  position: absolute;
+  top: 159.5px;
+  left: 79.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault12 {
+  position: absolute;
+  top: 239.5px;
+  left: 79.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault13 {
+  position: absolute;
+  top: 319.5px;
+  left: 79.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateInactive2 {
+  position: absolute;
+  top: -0.5px;
+  left: 79.5px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault14 {
+  position: absolute;
+  top: -0.5px;
+  left: 239.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault15 {
+  position: absolute;
+  top: 79.5px;
+  left: 239.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault16 {
+  position: absolute;
+  top: 159.5px;
+  left: 239.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault17 {
+  position: absolute;
+  top: 239.5px;
+  left: 239.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault18 {
+  position: absolute;
+  top: 319.5px;
+  left: 239.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault19 {
+  position: absolute;
+  top: -0.5px;
+  left: 319.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault20 {
+  position: absolute;
+  top: 79.5px;
+  left: 319.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault21 {
+  position: absolute;
+  top: 159.5px;
+  left: 319.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault22 {
+  position: absolute;
+  top: 239.5px;
+  left: 319.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault23 {
+  position: absolute;
+  top: 79.5px;
+  left: 479.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault24 {
+  position: absolute;
+  top: 159.5px;
+  left: 479.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault25 {
+  position: absolute;
+  top: 239.5px;
+  left: 479.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateActive {
+  position: absolute;
+  top: 0px;
+  left: 480px;
+  border-radius: 30px;
+  background-color: #98d89e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.div28 {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  font-weight: 600;
+  background: linear-gradient(#000, #000), #62b161;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.dateInactive3 {
+  position: absolute;
+  top: 319.5px;
+  left: 319.5px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: #9c8d8d;
+}
+.dateInactive4 {
+  position: absolute;
+  top: 319.5px;
+  left: 479.5px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: #9c8d8d;
+}
+.dateDefault26 {
+  position: absolute;
+  top: 79.5px;
+  left: 399.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault27 {
+  position: absolute;
+  top: 239.5px;
+  left: 399.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault28 {
+  position: absolute;
+  top: -0.5px;
+  left: 399.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateDefault29 {
+  position: absolute;
+  top: 159.5px;
+  left: 399.5px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.dateInactive5 {
+  position: absolute;
+  top: 319.5px;
+  left: 399.5px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: #9c8d8d;
+}
+.rightCard {
+  position: absolute;
+  top: 0px;
+  left: 680px;
+  width: 320px;
+  height: 546px;
+  text-align: left;
+  color: #999;
+}
+.card3 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 320px;
+  height: 546px;
+}
+.meetingWithSuppliersParent {
+  position: absolute;
+  top: 93px;
+  left: 40px;
+  width: 221px;
+  height: 69px;
+}
+.meetingWithSuppliers {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  font-size: 14px;
+  display: inline-block;
+  color: #666;
+  width: 206px;
+}
+.div36 {
+  position: absolute;
+  top: 29px;
+  left: 15px;
+}
+.atSunsetRoad {
+  position: absolute;
+  top: 50px;
+  left: 15px;
+}
+.groupChild {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-right: 5px solid #9bdd7c;
+  box-sizing: border-box;
+  width: 5px;
+  height: 74px;
+}
+.checkOperationAtGigaFactorParent {
+  position: absolute;
+  top: 187px;
+  left: 40.5px;
+  width: 240.5px;
+  height: 72.5px;
+}
+.checkOperationAt {
+  position: absolute;
+  top: 6px;
+  left: 12.5px;
+  font-size: 14px;
+  display: inline-block;
+  color: #666;
+  width: 228px;
+}
+.div37 {
+  position: absolute;
+  top: 30px;
+  left: 12.5px;
+}
+.atCentralJakarta {
+  position: absolute;
+  top: 51px;
+  left: 12.5px;
+}
+.groupItem {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 10px;
+  height: 72.5px;
+  object-fit: contain;
+}
+.schedules4 {
+  position: absolute;
+  top: 36px;
+  left: 40px;
+  font-size: 18px;
+  font-family: Montserrat;
+  color: #000;
+  text-align: center;
+}
+.buttonAdd {
+  position: absolute;
+  top: 30px;
+  left: 200px;
+  width: 80px;
+  height: 32px;
+  font-size: 14px;
+  color: #fff;
+  font-family: Montserrat;
+}
+.buttonPrimary {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 80px;
+  height: 32px;
+}
+.buttonPrimary2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 10px;
+  background-color: #48a57f;
+}
+.add {
+  position: absolute;
+  top: 7px;
+  left: 34px;
+}
+.groupIcon {
+  position: absolute;
+  height: 37.5%;
+  width: 15%;
+  top: 31.25%;
+  right: 63.75%;
+  bottom: 31.25%;
+  left: 21.25%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.schedulesChild {
+  position: absolute;
+  top: 723px;
+  left: 405px;
+  border-radius: 20px;
+  background-color: #fff;
+  width: 1000px;
+  height: 261px;
+}
+.noCurrentData {
+  position: absolute;
+  top: 829px;
+  left: 712px;
+  font-size: 40px;
+  font-weight: 500;
+  color: #4d4a4a;
+}
+.weeklyFocusChart {
+  position: absolute;
+  top: 743px;
+  left: 428px;
+}
+.kakaotalk202506141319546193Icon {
+  position: absolute;
+  top: 50px;
+  left: 1325px;
+  border-radius: 100px;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}

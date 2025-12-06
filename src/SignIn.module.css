@@ -1,0 +1,210 @@
+.signIn {
+  width: 100%;
+  height: 1024px;
+  position: relative;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  text-align: left;
+  font-size: 16px;
+  color: #000;
+  font-family: Montserrat;
+}
+.leftSide {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #48a57f;
+  width: 602px;
+  height: 1024px;
+  flex-shrink: 0;
+}
+.loginForm {
+  position: absolute;
+  top: 401px;
+  left: 845px;
+  width: 385px;
+  height: 356px;
+  flex-shrink: 0;
+  font-family: Lato;
+}
+.card {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 385px;
+  height: 317px;
+}
+.card2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 20px;
+  background-color: #fff;
+}
+.inputField {
+  position: absolute;
+  top: 59px;
+  left: 30px;
+  width: 325px;
+  height: 40px;
+}
+.inputField2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+.input {
+  position: absolute;
+  height: 11.24%;
+  width: 84.42%;
+  top: 41.57%;
+  right: 7.79%;
+  bottom: 47.19%;
+  left: 7.79%;
+  border-radius: 10px;
+  background-color: #eaeaea;
+}
+.buttonSignIn {
+  position: absolute;
+  top: 247px;
+  left: 30px;
+  width: 325px;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  font-family: Montserrat;
+}
+.buttonPrimary {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 325px;
+  height: 40px;
+}
+.buttonPrimary2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 10px;
+  background-color: #48a57f;
+}
+.signIn2 {
+  position: absolute;
+  top: 9px;
+  left: 112.58px;
+  display: inline-block;
+  width: 102px;
+  height: 21.7px;
+}
+.id {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+.password {
+  position: absolute;
+  top: 119px;
+  left: 30px;
+}
+.forgotPassword {
+  position: absolute;
+  top: 208px;
+  left: 31px;
+  color: #34d45a;
+}
+.dontHaveAnContainer {
+  position: absolute;
+  top: 337px;
+  left: 62px;
+  text-align: center;
+  color: #858585;
+}
+.registerHere {
+  color: #34d45a;
+}
+.signIn3 {
+  position: absolute;
+  top: 313px;
+  left: 845px;
+  font-size: 36px;
+  flex-shrink: 0;
+}
+.signInTo {
+  position: absolute;
+  top: 362px;
+  left: 845px;
+  font-family: Lato;
+  flex-shrink: 0;
+}
+.timeflow {
+  position: absolute;
+  top: 469px;
+  left: 115px;
+  font-size: 72px;
+  color: #fff;
+  flex-shrink: 0;
+}
+.googleSignUp {
+  position: absolute;
+  top: 1216px;
+  left: 1050px;
+  width: 180px;
+  height: 30px;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 12px;
+  color: #858585;
+}
+.white {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 180px;
+  height: 30px;
+}
+.button {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.signUpWith {
+  position: absolute;
+  top: 8px;
+  left: 40px;
+}
+.googleIcon1 {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  width: 14px;
+  height: 14px;
+}
+.fourLeafClover {
+  position: absolute;
+  top: 432px;
+  left: 215px;
+  width: 74px;
+  height: 74px;
+  object-fit: cover;
+  flex-shrink: 0;
+}

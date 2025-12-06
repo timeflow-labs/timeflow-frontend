@@ -1,0 +1,408 @@
+.settings {
+  width: 100%;
+  height: 1024px;
+  position: relative;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  text-align: left;
+  font-size: 16px;
+  color: #000;
+  font-family: Montserrat;
+}
+.navigation {
+  position: absolute;
+  top: 40px;
+  left: 80px;
+  width: 305px;
+  height: 944px;
+  font-size: 18px;
+  color: #f5f5f5;
+}
+.leftSide {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 30px;
+  background-color: #48a57f;
+}
+.help {
+  position: absolute;
+  width: 12.13%;
+  top: 87.92%;
+  left: 17.86%;
+  font-size: 14px;
+  display: inline-block;
+}
+.contactUs {
+  position: absolute;
+  width: 27.87%;
+  top: 91.84%;
+  left: 17.86%;
+  font-size: 14px;
+  display: inline-block;
+}
+.settings2 {
+  position: absolute;
+  width: 26.79%;
+  top: 37.08%;
+  left: 31.43%;
+  display: inline-block;
+}
+.schedules {
+  position: absolute;
+  width: 33.21%;
+  top: 30.51%;
+  left: 31.43%;
+  display: inline-block;
+}
+.focusmode {
+  position: absolute;
+  width: 41.08%;
+  top: 23.94%;
+  left: 31.43%;
+  display: inline-block;
+}
+.dashboard {
+  position: absolute;
+  width: 37.15%;
+  top: 17.37%;
+  left: 31.43%;
+  display: inline-block;
+}
+.transactionIcon {
+  position: absolute;
+  height: 2.2%;
+  width: 6.43%;
+  top: 23.94%;
+  right: 75.72%;
+  bottom: 73.86%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: contain;
+}
+.scheduleIcon {
+  position: absolute;
+  height: 1.91%;
+  width: 6.43%;
+  top: 30.72%;
+  right: 75.72%;
+  bottom: 67.37%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.dashboardIcon {
+  position: absolute;
+  height: 1.91%;
+  width: 6.43%;
+  top: 17.58%;
+  right: 75.72%;
+  bottom: 80.51%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.settingIcon {
+  position: absolute;
+  height: 1.91%;
+  width: 6.1%;
+  top: 37.29%;
+  right: 76.04%;
+  bottom: 60.81%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.timeflow {
+  position: absolute;
+  top: 6.36%;
+  left: calc(50% - 108.5px);
+  font-size: 36px;
+  display: inline-block;
+  width: 217px;
+}
+.buttonChangePhoto {
+  position: absolute;
+  top: 453px;
+  left: 528px;
+  width: 130px;
+  height: 52px;
+  text-align: center;
+  font-size: 20px;
+  color: #858585;
+}
+.buttonPrimary {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 130px;
+  height: 52px;
+}
+.buttonPrimary2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #858585;
+  box-sizing: border-box;
+}
+.change {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 52px;
+}
+.header {
+  position: absolute;
+  top: 48px;
+  left: 405px;
+  width: 894px;
+  height: 29px;
+  font-size: 24px;
+}
+.settings3 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  width: 129.8px;
+}
+.vectorIcon {
+  position: absolute;
+  height: 68.97%;
+  width: 1.91%;
+  top: 17.24%;
+  right: 0.01%;
+  bottom: 13.79%;
+  left: 98.08%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.accountCard {
+  position: absolute;
+  top: 204px;
+  left: 746px;
+  width: 452px;
+  height: 497px;
+  font-family: Lato;
+}
+.card {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 452px;
+  height: 497px;
+}
+.card2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 20px;
+  background-color: #fff;
+}
+.inputFieldParent {
+  position: absolute;
+  top: 95px;
+  left: 44.64px;
+  width: 362.7px;
+  height: 79.9px;
+}
+.inputField {
+  position: absolute;
+  top: 33.6px;
+  left: 0px;
+  width: 362.7px;
+  height: 46.3px;
+}
+.inputField2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+.emailAddress {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  width: 107.1px;
+  height: 22px;
+}
+.inputFieldGroup {
+  position: absolute;
+  top: 198.1px;
+  left: 44.64px;
+  width: 362.7px;
+  height: 79.9px;
+}
+.eleyeOpenIcon {
+  position: absolute;
+  top: 45.18px;
+  left: 323.65px;
+  width: 22.3px;
+  height: 23.2px;
+}
+.currentPassword {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  width: 140.6px;
+  height: 22px;
+}
+.inputFieldContainer {
+  position: absolute;
+  top: 301.21px;
+  left: 44.64px;
+  width: 362.7px;
+  height: 79.9px;
+}
+.newPassword {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  width: 116.1px;
+  height: 22px;
+}
+.account {
+  position: absolute;
+  top: 34.75px;
+  left: 44.64px;
+  font-size: 18px;
+  display: inline-block;
+  font-family: Montserrat;
+  width: 89.3px;
+  height: 25.5px;
+}
+.buttonPrimaryParent {
+  position: absolute;
+  top: 415.9px;
+  left: 282.36px;
+  width: 125px;
+  height: 46.3px;
+  color: #fff;
+  font-family: Montserrat;
+}
+.buttonPrimary3 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 125px;
+  height: 46.3px;
+}
+.buttonPrimary4 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 10px;
+  background-color: #48a57f;
+}
+.save {
+  position: absolute;
+  top: 11.58px;
+  left: 40.18px;
+  display: inline-block;
+  width: 44.6px;
+  height: 23.2px;
+}
+.dangerZoneCard {
+  position: absolute;
+  top: 959px;
+  left: 1185px;
+  width: 173px;
+  height: 24.7px;
+  text-align: center;
+  color: #808080;
+}
+.buttonDeleteMyAccount {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 173px;
+  height: 24.7px;
+}
+.buttonPrimary5 {
+  position: absolute;
+  top: 0px;
+  left: 2px;
+  width: 169.9px;
+  height: 24.7px;
+}
+.buttonPrimary6 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.deleteMyAccount {
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  font-weight: 500;
+  display: inline-block;
+  width: 173px;
+}
+.pleadingFaceLeft {
+  position: absolute;
+  top: calc(50% + 417px);
+  left: calc(50% + 621px);
+  width: 32px;
+  height: 30.4px;
+  object-fit: cover;
+}
+.kakaotalk202506141319546191Icon {
+  position: absolute;
+  top: 226px;
+  left: 496px;
+  border-radius: 100px;
+  width: 194px;
+  height: 194px;
+  object-fit: cover;
+}
+.kakaotalk202506141319546192Icon {
+  position: absolute;
+  top: 48px;
+  left: 1328px;
+  border-radius: 100px;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}

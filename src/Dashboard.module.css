@@ -1,0 +1,653 @@
+.dashboard {
+  width: 100%;
+  height: 1024px;
+  position: relative;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  text-align: left;
+  font-size: 24px;
+  color: #000;
+  font-family: Montserrat;
+}
+.navigation {
+  position: absolute;
+  top: 40px;
+  left: 80px;
+  width: 305px;
+  height: 944px;
+  font-size: 18px;
+  color: #f5f5f5;
+}
+.leftSide {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 30px;
+  background-color: #48a57f;
+}
+.help {
+  position: absolute;
+  width: 12.13%;
+  top: 87.92%;
+  left: 17.86%;
+  font-size: 14px;
+  display: inline-block;
+}
+.contactUs {
+  position: absolute;
+  width: 27.87%;
+  top: 91.84%;
+  left: 17.86%;
+  font-size: 14px;
+  display: inline-block;
+}
+.settings {
+  position: absolute;
+  width: 26.79%;
+  top: 37.08%;
+  left: 31.43%;
+  display: inline-block;
+}
+.schedules {
+  position: absolute;
+  width: 33.21%;
+  top: 30.51%;
+  left: 31.43%;
+  display: inline-block;
+}
+.focusmode {
+  position: absolute;
+  width: 41.08%;
+  top: 23.94%;
+  left: 31.43%;
+  display: inline-block;
+}
+.dashboard2 {
+  position: absolute;
+  width: 37.15%;
+  top: 17.37%;
+  left: 31.43%;
+  display: inline-block;
+}
+.transactionIcon {
+  position: absolute;
+  height: 2.2%;
+  width: 6.43%;
+  top: 23.94%;
+  right: 75.72%;
+  bottom: 73.86%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: contain;
+}
+.scheduleIcon {
+  position: absolute;
+  height: 1.91%;
+  width: 6.43%;
+  top: 30.72%;
+  right: 75.72%;
+  bottom: 67.37%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.dashboardIcon {
+  position: absolute;
+  height: 1.91%;
+  width: 6.43%;
+  top: 17.58%;
+  right: 75.72%;
+  bottom: 80.51%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.settingIcon {
+  position: absolute;
+  height: 1.91%;
+  width: 6.1%;
+  top: 37.29%;
+  right: 76.04%;
+  bottom: 60.81%;
+  left: 17.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.timeflow {
+  position: absolute;
+  top: 6.36%;
+  left: calc(50% - 108.5px);
+  font-size: 36px;
+  display: inline-block;
+  width: 217px;
+}
+.header {
+  position: absolute;
+  top: 49px;
+  left: 407px;
+  width: 894px;
+  height: 29px;
+}
+.helloGayeon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  width: 197px;
+}
+.gayeon {
+  color: #34d45a;
+}
+.span {
+  white-space: pre-wrap;
+}
+.vectorIcon {
+  position: absolute;
+  height: 68.97%;
+  width: 1.91%;
+  top: 17.24%;
+  right: 0.01%;
+  bottom: 13.79%;
+  left: 98.08%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.myGarden {
+  position: absolute;
+  top: 144px;
+  left: 404px;
+}
+.activitiesCard {
+  position: absolute;
+  top: 183px;
+  left: 405px;
+  width: 738px;
+  height: 413px;
+}
+.card {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 738px;
+  height: 413px;
+}
+.card2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 20px;
+  background-color: #fff;
+}
+.activitiesCard2 {
+  position: absolute;
+  top: 183px;
+  left: 1163px;
+  width: 244px;
+  height: 265px;
+}
+.card3 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 244px;
+  height: 265px;
+}
+.topProductsCard {
+  position: absolute;
+  top: 634px;
+  left: 405px;
+  width: 482px;
+  height: 256px;
+  font-size: 14px;
+}
+.card5 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 482px;
+  height: 256px;
+}
+.div {
+  position: absolute;
+  top: 72px;
+  left: 245.02px;
+  width: 63.3px;
+  height: 36px;
+}
+.child {
+  position: absolute;
+  top: 3px;
+  left: 0px;
+  border-radius: 50%;
+  background-color: #98d89e;
+  width: 11px;
+  height: 11px;
+}
+.adsp {
+  position: absolute;
+  top: 0px;
+  left: 21.09px;
+  display: inline-block;
+  width: 42.2px;
+}
+.div2 {
+  position: absolute;
+  top: 22px;
+  left: 21.09px;
+  font-size: 12px;
+  font-family: Lato;
+  color: #858585;
+  display: inline-block;
+  width: 24.1px;
+}
+.mayJune2021Wrapper {
+  position: absolute;
+  top: 31px;
+  left: 328.36px;
+  width: 97.4px;
+  height: 15px;
+  font-size: 12px;
+  color: #858585;
+}
+.mayJune {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  width: 97.4px;
+}
+.vectorIcon2 {
+  position: absolute;
+  height: 1.95%;
+  width: 1.66%;
+  top: 14.45%;
+  right: 8.97%;
+  bottom: 83.59%;
+  left: 89.38%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.div3 {
+  position: absolute;
+  top: 129px;
+  left: 245.02px;
+  width: 56.2px;
+  height: 36px;
+}
+.item {
+  position: absolute;
+  top: 3px;
+  left: 0px;
+  border-radius: 50%;
+  background-color: #f6dc7d;
+  width: 11px;
+  height: 11px;
+}
+.aibt {
+  position: absolute;
+  top: 0px;
+  left: 21.09px;
+  display: inline-block;
+  width: 35.1px;
+}
+.div5 {
+  position: absolute;
+  top: 186px;
+  left: 245.02px;
+  width: 62.3px;
+  height: 36px;
+}
+.inner {
+  position: absolute;
+  top: 3px;
+  left: 0px;
+  border-radius: 50%;
+  background-color: #ee8484;
+  width: 11px;
+  height: 11px;
+}
+.sqld {
+  position: absolute;
+  top: 0px;
+  left: 21.09px;
+  display: inline-block;
+  width: 41.2px;
+}
+.topFocus {
+  position: absolute;
+  top: 30px;
+  left: 40.17px;
+  font-size: 18px;
+  display: inline-block;
+  width: 96.4px;
+}
+.pieChartIcon {
+  position: absolute;
+  top: 82px;
+  left: 60.25px;
+  width: 134.6px;
+  height: 134px;
+  object-fit: contain;
+}
+.schedulesCard {
+  position: absolute;
+  top: 281px;
+  left: 941px;
+  width: 480px;
+  height: 609px;
+  font-size: 18px;
+}
+.card7 {
+  position: absolute;
+  top: 353px;
+  left: 0px;
+  width: 480px;
+  height: 256px;
+}
+.todaysSchedule {
+  position: absolute;
+  top: 383px;
+  left: 40px;
+  display: inline-block;
+  width: 162px;
+  height: 22px;
+}
+.todayFocus {
+  position: absolute;
+  top: 0px;
+  left: 256px;
+}
+.avgFocusLevel {
+  position: absolute;
+  top: 72px;
+  left: 256px;
+}
+.meetingWithSuppliersFromKuParent {
+  position: absolute;
+  top: 430px;
+  left: 40px;
+  width: 251px;
+  height: 66px;
+  font-size: 12px;
+  color: #999;
+  font-family: Lato;
+}
+.meetingWithSuppliers {
+  position: absolute;
+  top: 3px;
+  left: 15px;
+  font-size: 14px;
+  display: inline-block;
+  color: #666;
+  width: 236px;
+  height: 17px;
+}
+.div7 {
+  position: absolute;
+  top: 25px;
+  left: 15px;
+  display: inline-block;
+  width: 66px;
+  height: 14px;
+}
+.atSunsetRoad {
+  position: absolute;
+  top: 44px;
+  left: 15px;
+  display: inline-block;
+  width: 135px;
+  height: 14px;
+}
+.groupChild {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-right: 5px solid #9bdd7c;
+  box-sizing: border-box;
+  width: 5px;
+  height: 71px;
+}
+.seeAll {
+  position: absolute;
+  top: 387px;
+  left: 398px;
+  font-size: 12px;
+  color: #858585;
+  display: inline-block;
+  width: 41px;
+  height: 15px;
+}
+.vectorIcon3 {
+  position: absolute;
+  height: 1.31%;
+  width: 1.04%;
+  top: 64.2%;
+  right: 6.25%;
+  bottom: 34.48%;
+  left: 92.71%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: contain;
+}
+.checkOperationAtGigaFactorParent {
+  position: absolute;
+  top: 509px;
+  left: 40px;
+  width: 227px;
+  height: 66px;
+  font-size: 12px;
+  color: #999;
+  font-family: Lato;
+}
+.checkOperationAt {
+  position: absolute;
+  top: 3px;
+  left: 15px;
+  font-size: 14px;
+  display: inline-block;
+  color: #666;
+  width: 212px;
+  height: 17px;
+}
+.atCentralJakarta {
+  position: absolute;
+  top: 44px;
+  left: 15px;
+  display: inline-block;
+  width: 92px;
+  height: 14px;
+}
+.groupItem {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-right: 5px solid #6972c3;
+  box-sizing: border-box;
+  width: 5px;
+  height: 71px;
+}
+.schedulesCard2 {
+  position: absolute;
+  top: 207px;
+  left: 927px;
+  width: 480px;
+  height: 683px;
+  font-size: 12px;
+}
+.card9 {
+  position: absolute;
+  top: 427px;
+  left: 0px;
+  width: 480px;
+  height: 256px;
+}
+.todaysSchedule2 {
+  position: absolute;
+  top: 457px;
+  left: 40px;
+  font-size: 18px;
+}
+.streak {
+  position: absolute;
+  top: 0px;
+  left: 270px;
+  font-size: 18px;
+}
+.meetingWithHyojeongParent {
+  position: absolute;
+  top: 504px;
+  left: 40px;
+  width: 164px;
+  height: 66px;
+  color: #999;
+  font-family: Lato;
+}
+.meetingWithHyojeong {
+  position: absolute;
+  top: 3px;
+  left: 15px;
+  font-size: 14px;
+  color: #666;
+}
+.div9 {
+  position: absolute;
+  top: 25px;
+  left: 15px;
+}
+.atSunsetRoad2 {
+  position: absolute;
+  top: 44px;
+  left: 15px;
+}
+.seeAll2 {
+  position: absolute;
+  top: 461px;
+  left: 398px;
+  color: #858585;
+}
+.vectorIcon4 {
+  position: absolute;
+  height: 1.17%;
+  width: 1.04%;
+  top: 68.08%;
+  right: 6.25%;
+  bottom: 30.75%;
+  left: 92.71%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: contain;
+}
+.checkOperationAtGigaFactorGroup {
+  position: absolute;
+  top: 583px;
+  left: 40px;
+  width: 227px;
+  height: 66px;
+  color: #999;
+  font-family: Lato;
+}
+.areYouReady {
+  position: absolute;
+  top: 79px;
+  left: 407px;
+}
+.trophyIcon {
+  position: absolute;
+  top: 665px;
+  left: 415px;
+  width: 24px;
+  height: 21px;
+  object-fit: contain;
+}
+.wavingHand {
+  position: absolute;
+  top: calc(50% - 460px);
+  left: calc(50% - 130px);
+  width: 28px;
+  height: 24px;
+  overflow: hidden;
+}
+.wavingHandIcon {
+  position: absolute;
+  top: calc(50% - 12.26px);
+  left: calc(50% - 12.14px);
+  width: 24.9px;
+  height: 24.5px;
+  object-fit: cover;
+}
+.smilingFaceWithSunglasses {
+  position: absolute;
+  top: 81px;
+  left: 963px;
+  width: 26px;
+  height: 26px;
+  overflow: hidden;
+}
+.smilingFaceWithSunglassesF {
+  position: absolute;
+  top: calc(50% - 12.51px);
+  left: calc(50% - 12.38px);
+  width: 24.8px;
+  height: 25px;
+  object-fit: cover;
+}
+.seedlingIcon {
+  position: absolute;
+  top: 135px;
+  left: 542px;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+.div11 {
+  position: absolute;
+  top: 243px;
+  left: 1194px;
+  font-size: 15px;
+}
+.div12 {
+  position: absolute;
+  top: 316px;
+  left: 1194px;
+  font-size: 15px;
+}
+.div13 {
+  position: absolute;
+  top: 392px;
+  left: 1194px;
+  font-size: 15px;
+}
+.kakaotalk202512052123403281Icon {
+  position: absolute;
+  top: 221px;
+  left: 603px;
+  width: 341px;
+  height: 341px;
+  object-fit: cover;
+}
+.kakaotalk202506141319546192Icon {
+  position: absolute;
+  top: 49px;
+  left: 1324px;
+  border-radius: 100px;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
