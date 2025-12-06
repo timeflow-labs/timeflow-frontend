@@ -1,17 +1,81 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useCallback, useState } from 'react';
 import styles from './Schedules.module.css';
+import { createSession } from './api';
+import { unstyledButton } from './buttonResetStyle';
 
-const Schedules: FunctionComponent = () => {
+type ScheduleRoute = 'dashboard' | 'focusmode' | 'schedules' | 'settings';
+
+type SchedulesProps = {
+  onNavigate: (route: ScheduleRoute) => void;
+};
+
+const Schedules: FunctionComponent<SchedulesProps> = ({ onNavigate }) => {
+  const [addStatus, setAddStatus] = useState('No Current Data');
+  const [isAdding, setIsAdding] = useState(false);
+
+  const handleAddSchedule = useCallback(async () => {
+    if (isAdding) return;
+
+    setIsAdding(true);
+    try {
+      const start = new Date();
+      const end = new Date(start.getTime() + 25 * 60 * 1000);
+      const session = await createSession({
+        start_time: start.toISOString(),
+        end_time: end.toISOString(),
+        focus_level: 4,
+        memo: 'Quick schedule block',
+        tags: ['schedule'],
+      });
+      setAddStatus(
+        `Session ${session.id} stored (${session.duration_minutes} mins).`,
+      );
+    } catch (error) {
+      console.error(error);
+      setAddStatus('Failed to add a session. Please try again.');
+    } finally {
+      setIsAdding(false);
+    }
+  }, [isAdding]);
+
   return (
     <div className={styles.schedules}>
       <div className={styles.navigation}>
         <div className={styles.leftSide} />
         <div className={styles.help}>Help</div>
         <div className={styles.contactUs}>Contact Us</div>
-        <div className={styles.settings}>Settings</div>
-        <b className={styles.schedules2}>Schedules</b>
-        <div className={styles.focusmode}>Focusmode</div>
-        <div className={styles.dashboard}>Dashboard</div>
+        <button
+          type="button"
+          className={styles.settings}
+          style={unstyledButton}
+          onClick={() => onNavigate('settings')}
+        >
+          Settings
+        </button>
+        <button
+          type="button"
+          className={styles.schedules2}
+          style={{ ...unstyledButton, fontWeight: 'bold' }}
+          onClick={() => onNavigate('schedules')}
+        >
+          Schedules
+        </button>
+        <button
+          type="button"
+          className={styles.focusmode}
+          style={unstyledButton}
+          onClick={() => onNavigate('focusmode')}
+        >
+          Focusmode
+        </button>
+        <button
+          type="button"
+          className={styles.dashboard}
+          style={unstyledButton}
+          onClick={() => onNavigate('dashboard')}
+        >
+          Dashboard
+        </button>
         <img
           className={styles.transactionIcon}
           alt="Focusmode"
@@ -76,16 +140,6 @@ const Schedules: FunctionComponent = () => {
             <div className={styles.header2}>
               <b className={styles.dec2025}>DEC 2025</b>
               <div className={styles.iconChevronRightParent}>
-                <img
-                  className={styles.iconChevronRight}
-                  alt="Next month"
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m9 6l6 6l-6 6l-1.4-1.4L12.2 12L7.6 7.4L9 6Z'/%3E%3C/svg%3E"
-                />
-                <img
-                  className={styles.iconChevronLeft}
-                  alt="Previous month"
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m15 18l-6-6l6-6l1.4 1.4L11.8 12l4.6 4.6L15 18Z'/%3E%3C/svg%3E"
-                />
               </div>
             </div>
             <div className={styles.days2}>
@@ -218,21 +272,25 @@ const Schedules: FunctionComponent = () => {
             />
           </div>
           <b className={styles.schedules4}>Schedules</b>
-          <div className={styles.buttonAdd}>
+          <button
+            type="button"
+            className={styles.buttonAdd}
+            style={unstyledButton}
+            onClick={handleAddSchedule}
+            aria-label="Add new schedule block"
+            aria-busy={isAdding}
+          >
             <div className={styles.buttonPrimary}>
               <div className={styles.buttonPrimary2} />
             </div>
-            <b className={styles.add}>Add</b>
-            <img
-              className={styles.groupIcon}
-              alt="Add"
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%23FFFFFF' d='M11 5h2v14h-2V5Zm-6 6h14v2H5v-2Z'/%3E%3C/svg%3E"
-            />
-          </div>
+            <b className={styles.add}>
+              {isAdding ? 'Adding...' : 'Add'}
+            </b>
+          </button>
         </div>
       </div>
       <div className={styles.schedulesChild} />
-      <div className={styles.noCurrentData}>No Current Data</div>
+      <div className={styles.noCurrentData}>{addStatus}</div>
       <b className={styles.weeklyFocusChart}>Weekly Focus Chart</b>
       <img
         className={styles.kakaotalk202506141319546193Icon}

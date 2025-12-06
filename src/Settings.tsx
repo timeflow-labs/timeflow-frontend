@@ -1,17 +1,94 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useCallback } from 'react';
 import styles from './Settings.module.css';
+import { createDailyReport, deleteSession, fetchTags } from './api';
+import { unstyledButton } from './buttonResetStyle';
 
-const Settings: FunctionComponent = () => {
+type SettingsRoute = 'dashboard' | 'focusmode' | 'schedules' | 'settings';
+
+type SettingsProps = {
+  onNavigate: (route: SettingsRoute) => void;
+};
+
+const Settings: FunctionComponent<SettingsProps> = ({ onNavigate }) => {
+  const handleViewTags = useCallback(async () => {
+    try {
+      const response = await fetchTags();
+      const tagNames = response.items.map((tag) => tag.name).join(', ');
+      window.alert(
+        tagNames
+          ? `Available tags: ${tagNames}`
+          : 'No tags found. Create one from the API.',
+      );
+    } catch (error) {
+      console.error(error);
+      window.alert('Unable to load tags. Please try again.');
+    }
+  }, []);
+
+  const handleSaveAccount = useCallback(async () => {
+    try {
+      const today = new Date().toISOString().slice(0, 10);
+      const report = await createDailyReport({ date: today, format: 'pdf' });
+      window.alert(
+        `Daily report requested (#${report.report_id}). URL: ${report.report_url}`,
+      );
+    } catch (error) {
+      console.error(error);
+      window.alert('Failed to request a daily report.');
+    }
+  }, []);
+
+  const handleDeleteSession = useCallback(async () => {
+    const sessionId = window.prompt('Enter the session ID to delete');
+    if (!sessionId) return;
+
+    try {
+      await deleteSession(sessionId);
+      window.alert(`Session ${sessionId} deleted (HTTP 204).`);
+    } catch (error) {
+      console.error(error);
+      window.alert('Failed to delete the session.');
+    }
+  }, []);
+
   return (
     <div className={styles.settings}>
       <div className={styles.navigation}>
         <div className={styles.leftSide} />
         <div className={styles.help}>Help</div>
         <div className={styles.contactUs}>Contact Us</div>
-        <b className={styles.settings2}>Settings</b>
-        <div className={styles.schedules}>Schedules</div>
-        <div className={styles.focusmode}>Focusmode</div>
-        <div className={styles.dashboard}>Dashboard</div>
+        <button
+          type="button"
+          className={styles.settings2}
+          style={{ ...unstyledButton, fontWeight: 'bold' }}
+          onClick={() => onNavigate('settings')}
+        >
+          Settings
+        </button>
+        <button
+          type="button"
+          className={styles.schedules}
+          style={unstyledButton}
+          onClick={() => onNavigate('schedules')}
+        >
+          Schedules
+        </button>
+        <button
+          type="button"
+          className={styles.focusmode}
+          style={unstyledButton}
+          onClick={() => onNavigate('focusmode')}
+        >
+          Focusmode
+        </button>
+        <button
+          type="button"
+          className={styles.dashboard}
+          style={unstyledButton}
+          onClick={() => onNavigate('dashboard')}
+        >
+          Dashboard
+        </button>
         <img
           className={styles.transactionIcon}
           alt="Focusmode"
@@ -34,12 +111,18 @@ const Settings: FunctionComponent = () => {
         />
         <b className={styles.timeflow}>TIMEFLOW</b>
       </div>
-      <div className={styles.buttonChangePhoto}>
+      <button
+        type="button"
+        className={styles.buttonChangePhoto}
+        style={unstyledButton}
+        onClick={handleViewTags}
+        aria-label="Load available tags"
+      >
         <div className={styles.buttonPrimary}>
           <div className={styles.buttonPrimary2} />
         </div>
         <b className={styles.change}>Change</b>
-      </div>
+      </button>
       <div className={styles.header}>
         <b className={styles.settings3}>Settings</b>
         <img
@@ -62,45 +145,42 @@ const Settings: FunctionComponent = () => {
           <div className={styles.inputField}>
             <div className={styles.inputField2} />
           </div>
-          <img
-            className={styles.eleyeOpenIcon}
-            alt="Show password"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 5c5 0 9.27 3.11 11 7c-1.73 3.89-6 7-11 7s-9.27-3.11-11-7c1.73-3.89 6-7 11-7Zm0 2c-2.74 0-5.54 1.47-7.35 4C6.46 13.53 9.26 15 12 15s5.54-1.47 7.35-4C17.54 8.47 14.74 7 12 7Zm0 2a3 3 0 1 1 0 6a3 3 0 0 1 0-6Zm0 2a1 1 0 1 0 0 2a1 1 0 0 0 0-2Z'/%3E%3C/svg%3E"
-          />
           <div className={styles.currentPassword}>Current Password</div>
         </div>
         <div className={styles.inputFieldContainer}>
           <div className={styles.inputField}>
             <div className={styles.inputField2} />
           </div>
-          <img
-            className={styles.eleyeOpenIcon}
-            alt="Show password"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 5c5 0 9.27 3.11 11 7c-1.73 3.89-6 7-11 7s-9.27-3.11-11-7c1.73-3.89 6-7 11-7Zm0 2c-2.74 0-5.54 1.47-7.35 4C6.46 13.53 9.26 15 12 15s5.54-1.47 7.35-4C17.54 8.47 14.74 7 12 7Zm0 2a3 3 0 1 1 0 6a3 3 0 0 1 0-6Zm0 2a1 1 0 1 0 0 2a1 1 0 0 0 0-2Z'/%3E%3C/svg%3E"
-          />
           <div className={styles.newPassword}>New Password</div>
         </div>
         <b className={styles.account}>Account</b>
-        <div className={styles.buttonPrimaryParent}>
+        <button
+          type="button"
+          className={styles.buttonPrimaryParent}
+          style={unstyledButton}
+          onClick={handleSaveAccount}
+          aria-label="Save settings and request report"
+        >
           <div className={styles.buttonPrimary3}>
             <div className={styles.buttonPrimary4} />
           </div>
           <b className={styles.save}>Save</b>
-        </div>
+        </button>
       </div>
       <div className={styles.dangerZoneCard}>
-        <div className={styles.buttonDeleteMyAccount}>
+        <button
+          type="button"
+          className={styles.buttonDeleteMyAccount}
+          style={unstyledButton}
+          onClick={handleDeleteSession}
+          aria-label="Delete a session via API"
+        >
           <div className={styles.buttonPrimary5}>
             <div className={styles.buttonPrimary6} />
           </div>
           <div className={styles.deleteMyAccount}>Delete My Account</div>
-        </div>
+        </button>
       </div>
-      <img
-        className={styles.pleadingFaceLeft}
-        alt="Pleading face"
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'%3E%3Cpath fill='%23F5C644' d='M12 2a10 10 0 1 1 0 20a10 10 0 0 1 0-20Zm-4.5 7a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3Zm9 0a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3ZM12 13c-2 0-3 1.1-3 2.2c0 1.4 1.3 2.8 3 2.8s3-1.4 3-2.8c0-1.1-1-2.2-3-2.2Zm-5 5.5c-.7 0-1.3.3-1.7.7a1 1 0 1 0 1.4 1.4c.2-.2.4-.3.7-.3c.7 0 1.3-.4 1.6-1.1a1 1 0 0 0-1.9-.7a.38.38 0 0 1-.1 0Zm10 0c-.4 0-.7.1-.9.3a1 1 0 0 0 1.6 1.1c.3.3.9.3 1.2 0a1 1 0 0 0-1.4-1.4c-.2-.3-.4-.4-.7-.4Z'/%3E%3C/svg%3E"
-      />
       <img
         className={styles.kakaotalk202506141319546191Icon}
         alt="Profile"

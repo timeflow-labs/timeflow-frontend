@@ -1,17 +1,53 @@
 import { FunctionComponent } from 'react';
 import styles from './Focusmode.module.css';
+import { unstyledButton } from './buttonResetStyle';
 
-const Focusmode: FunctionComponent = () => {
+type FocusRoute = 'dashboard' | 'focusmode' | 'schedules' | 'settings';
+
+type FocusmodeProps = {
+  onNavigate: (route: FocusRoute) => void;
+};
+
+const Focusmode: FunctionComponent<FocusmodeProps> = ({ onNavigate }) => {
+
   return (
     <div className={styles.focusmode}>
       <div className={styles.navigation}>
         <div className={styles.leftSide} />
         <div className={styles.help}>Help</div>
         <div className={styles.contactUs}>Contact Us</div>
-        <div className={styles.settings}>Settings</div>
-        <div className={styles.schedules}>Schedules</div>
-        <b className={styles.focusmode2}>Focusmode</b>
-        <div className={styles.dashboard}>Dashboard</div>
+        <button
+          type="button"
+          className={styles.settings}
+          style={unstyledButton}
+          onClick={() => onNavigate('settings')}
+        >
+          Settings
+        </button>
+        <button
+          type="button"
+          className={styles.schedules}
+          style={unstyledButton}
+          onClick={() => onNavigate('schedules')}
+        >
+          Schedules
+        </button>
+        <button
+          type="button"
+          className={styles.focusmode2}
+          style={{ ...unstyledButton, fontWeight: 'bold' }}
+          onClick={() => onNavigate('focusmode')}
+        >
+          Focusmode
+        </button>
+        <button
+          type="button"
+          className={styles.dashboard}
+          style={unstyledButton}
+          onClick={() => onNavigate('dashboard')}
+        >
+          Dashboard
+        </button>
         <img
           className={styles.transactionIcon}
           alt="Focusmode"

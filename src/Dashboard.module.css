@@ -640,7 +640,17 @@
   left: 603px;
   width: 341px;
   height: 341px;
-  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 24px;
+  background-color: #fff;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+  box-sizing: border-box;
+  overflow: visible;
 }
 .kakaotalk202506141319546192Icon {
   position: absolute;
@@ -650,4 +660,91 @@
   width: 30px;
   height: 30px;
   object-fit: cover;
+}
+.cardContent {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+}
+.cardTime {
+  font-weight: 500;
+  color: #0f172a;
+}
+.cardTags {
+  color: #6b7280;
+}
+.tagRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 13px;
+}
+.tagKey {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background-color: #f0f4ff;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+.tagName {
+  flex: 1;
+}
+.tagValue {
+  font-weight: 600;
+  color: #0f172a;
+}
+.highlight {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #6b7280;
+  font-style: italic;
+}
+.gardenImage {
+  width: 200px;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+.gardenMeta {
+  font-size: 12px;
+  color: #0f172a;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.gardenMeta span {
+  display: block;
+  color: #6b7280;
+}
+.gardenError,
+.gardenLoading,
+.emptyGarden {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 12px;
+  color: #6b7280;
+  padding: 24px 12px;
+}
+.gardenError {
+  color: #d90429;
+  font-weight: 600;
 }
