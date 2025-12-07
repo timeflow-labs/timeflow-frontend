@@ -20,27 +20,10 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [currentUser, setCurrentUser] = useState(null)
 
-  useEffect(() => {
-    const storedUser = window.localStorage.getItem('timeflowUser')
-    if (storedUser) {
-      try {
-        const parsed = JSON.parse(storedUser)
-        setCurrentUser(parsed)
-        setApiUserId(parsed.id)
-        setIsAuthenticated(true)
-        setCurrentScreen('dashboard')
-      } catch (error) {
-        console.error('Failed to parse stored user', error)
-        window.localStorage.removeItem('timeflowUser')
-      }
-    }
-  }, [])
-
   const showSignIn = useCallback(() => {
     setIsAuthenticated(false)
     setCurrentUser(null)
     setApiUserId(null)
-    window.localStorage.removeItem('timeflowUser')
     setCurrentScreen('signIn')
   }, [])
 
@@ -48,14 +31,12 @@ function App() {
     setIsAuthenticated(false)
     setCurrentUser(null)
     setApiUserId(null)
-    window.localStorage.removeItem('timeflowUser')
     setCurrentScreen('signUp')
   }, [])
 
   const completeSignIn = useCallback((user) => {
     setCurrentUser(user)
     setApiUserId(user.id)
-    window.localStorage.setItem('timeflowUser', JSON.stringify(user))
     setIsAuthenticated(true)
     setCurrentScreen('dashboard')
   }, [])

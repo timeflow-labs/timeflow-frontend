@@ -60,7 +60,11 @@ const SignUp: FunctionComponent<SignUpProps> = ({ onGoToSignIn }) => {
       );
     } catch (signUpError) {
       console.error(signUpError);
-      setError('Unable to complete sign-up. Please verify your info.');
+      if (signUpError instanceof Error) {
+        setError(signUpError.message);
+      } else {
+        setError('Unable to complete sign-up. Please verify your info.');
+      }
     } finally {
       setIsSubmitting(false);
     }

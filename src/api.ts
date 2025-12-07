@@ -47,7 +47,23 @@ async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   });
 
   if (!response.ok) {
-    const message = await response.text();
+    let message: string | undefined;
+    const contentType = response.headers.get('content-type');
+    try {
+      if (contentType?.includes('application/json')) {
+        const json = await response.json();
+        message =
+          typeof json.detail === 'string'
+            ? json.detail
+            : typeof json.message === 'string'
+            ? json.message
+            : JSON.stringify(json);
+      } else {
+        message = await response.text();
+      }
+    } catch (parseError) {
+      console.warn('Failed to parse error response', parseError);
+    }
     throw new Error(message || `Request failed with ${response.status}`);
   }
 

@@ -555,23 +555,36 @@ const Schedules: FunctionComponent<SchedulesProps> = ({ onNavigate }) => {
           </div>
           <div className={styles.focusChartBody}>
             {hasChartData ? (
-              <ResponsiveContainer width="100%" height="100%">
-                <ComposedChart data={weeklyChartData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                  <XAxis dataKey="label" stroke="#94a3b8" />
-                  <YAxis
-                    yAxisId="minutes"
-                    orientation="left"
-                    stroke="#34d399"
-                    width={40}
-                  />
-                  <YAxis
-                    yAxisId="focus"
-                    orientation="right"
-                    stroke="#6366f1"
-                    domain={[0, 5]}
-                    width={40}
-                  />
+              <div className={styles.focusChartInner}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <ComposedChart
+                    data={weeklyChartData}
+                    margin={{ top: 10, right: 16, bottom: 0, left: 16 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                    <XAxis
+                      dataKey="label"
+                      stroke="#94a3b8"
+                      tick={{ fontSize: 20 }}
+                      tickMargin={8}
+                    />
+                    <YAxis
+                      yAxisId="minutes"
+                      orientation="left"
+                      stroke="#34d399"
+                      width={40}
+                      tick={{ fontSize: 20 }}
+                      tickMargin={6}
+                    />
+                    <YAxis
+                      yAxisId="focus"
+                      orientation="right"
+                      stroke="#6366f1"
+                      domain={[0, 5]}
+                      width={40}
+                      tick={{ fontSize: 20 }}
+                      tickMargin={6}
+                    />
                   <Tooltip
                     formatter={(value: number, name) =>
                       name === 'minutes'
@@ -595,8 +608,9 @@ const Schedules: FunctionComponent<SchedulesProps> = ({ onNavigate }) => {
                     dot={{ r: 3 }}
                     activeDot={{ r: 5 }}
                   />
-                </ComposedChart>
-              </ResponsiveContainer>
+                  </ComposedChart>
+                </ResponsiveContainer>
+              </div>
             ) : (
               <div className={styles.chartPlaceholder}>
                 Log this week's sessions to see your minutes and focus trends.
