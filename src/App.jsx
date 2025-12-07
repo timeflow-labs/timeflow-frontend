@@ -5,6 +5,7 @@ import Schedules from './Schedules'
 import Settings from './Settings'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
+import { setApiUserId } from './api'
 import './App.css'
 
 const PROTECTED_SCREENS = new Set([
@@ -17,18 +18,44 @@ const PROTECTED_SCREENS = new Set([
 function App() {
   const [currentScreen, setCurrentScreen] = useState('signIn')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [currentUser, setCurrentUser] = useState(null)
+
+  useEffect(() => {
+    const storedUser = window.localStorage.getItem('timeflowUser')
+    if (storedUser) {
+      try {
+        const parsed = JSON.parse(storedUser)
+        setCurrentUser(parsed)
+        setApiUserId(parsed.id)
+        setIsAuthenticated(true)
+        setCurrentScreen('dashboard')
+      } catch (error) {
+        console.error('Failed to parse stored user', error)
+        window.localStorage.removeItem('timeflowUser')
+      }
+    }
+  }, [])
 
   const showSignIn = useCallback(() => {
     setIsAuthenticated(false)
+    setCurrentUser(null)
+    setApiUserId(null)
+    window.localStorage.removeItem('timeflowUser')
     setCurrentScreen('signIn')
   }, [])
 
   const showSignUp = useCallback(() => {
     setIsAuthenticated(false)
+    setCurrentUser(null)
+    setApiUserId(null)
+    window.localStorage.removeItem('timeflowUser')
     setCurrentScreen('signUp')
   }, [])
 
-  const completeSignIn = useCallback(() => {
+  const completeSignIn = useCallback((user) => {
+    setCurrentUser(user)
+    setApiUserId(user.id)
+    window.localStorage.setItem('timeflowUser', JSON.stringify(user))
     setIsAuthenticated(true)
     setCurrentScreen('dashboard')
   }, [])
@@ -55,7 +82,12 @@ function App() {
       renderedScreen = <SignUp onGoToSignIn={showSignIn} />
       break
     case 'dashboard':
-      renderedScreen = <Dashboard onNavigate={navigateProtected} />
+      renderedScreen = (
+        <Dashboard
+          onNavigate={navigateProtected}
+          currentUser={currentUser}
+        />
+      )
       break
     case 'focusmode':
       renderedScreen = <Focusmode onNavigate={navigateProtected} />

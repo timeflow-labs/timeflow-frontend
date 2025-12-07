@@ -261,21 +261,6 @@
   width: 52px;
   height: 16px;
 }
-.iconChevronRight {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 16px;
-  height: 16px;
-  opacity: 0.2;
-}
-.iconChevronLeft {
-  position: absolute;
-  top: 0px;
-  right: 36px;
-  width: 16px;
-  height: 16px;
-}
 .days2 {
   position: absolute;
   top: 86px;
@@ -611,6 +596,7 @@
   position: relative;
   font-weight: 600;
   background: linear-gradient(#000, #000), #62b161;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: flex;
@@ -717,75 +703,6 @@
   width: 320px;
   height: 546px;
 }
-.meetingWithSuppliersParent {
-  position: absolute;
-  top: 93px;
-  left: 40px;
-  width: 221px;
-  height: 69px;
-}
-.meetingWithSuppliers {
-  position: absolute;
-  top: 5px;
-  left: 15px;
-  font-size: 14px;
-  display: inline-block;
-  color: #666;
-  width: 206px;
-}
-.div36 {
-  position: absolute;
-  top: 29px;
-  left: 15px;
-}
-.atSunsetRoad {
-  position: absolute;
-  top: 50px;
-  left: 15px;
-}
-.groupChild {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border-right: 5px solid #9bdd7c;
-  box-sizing: border-box;
-  width: 5px;
-  height: 74px;
-}
-.checkOperationAtGigaFactorParent {
-  position: absolute;
-  top: 187px;
-  left: 40.5px;
-  width: 240.5px;
-  height: 72.5px;
-}
-.checkOperationAt {
-  position: absolute;
-  top: 6px;
-  left: 12.5px;
-  font-size: 14px;
-  display: inline-block;
-  color: #666;
-  width: 228px;
-}
-.div37 {
-  position: absolute;
-  top: 30px;
-  left: 12.5px;
-}
-.atCentralJakarta {
-  position: absolute;
-  top: 51px;
-  left: 12.5px;
-}
-.groupItem {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 10px;
-  height: 72.5px;
-  object-fit: contain;
-}
 .schedules4 {
   position: absolute;
   top: 36px;
@@ -828,39 +745,201 @@
   top: 7px;
   left: 34px;
 }
-.groupIcon {
+.weeklyLogSection {
   position: absolute;
-  height: 37.5%;
-  width: 15%;
-  top: 31.25%;
-  right: 63.75%;
-  bottom: 31.25%;
-  left: 21.25%;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-}
-.schedulesChild {
-  position: absolute;
-  top: 723px;
-  left: 405px;
-  border-radius: 20px;
+  top: 110px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  border-radius: 24px;
   background-color: #fff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #0f172a;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.16);
+  box-sizing: border-box;
+  z-index: 1;
+}
+.weeklyLogHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+.weeklyLogTitle {
+  font-size: 18px;
+  font-weight: 600;
+}
+.weeklyLogRefresh {
+  font-size: 12px;
+  color: #34d399;
+  font-weight: 600;
+  cursor: pointer;
+}
+.weeklyLogList {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.weeklyLogRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background-color: #fff;
+  padding: 10px 12px;
+}
+.weeklyLogDate {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.weeklyLogWeekday {
+  font-weight: 600;
+}
+.weeklyLogFullDate {
+  color: #6b7280;
+}
+.weeklyLogStats {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: right;
+}
+.weeklyLogEmpty {
+  font-size: 12px;
+  color: #6b7280;
+  border: 1px dashed #cbd5f5;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.manualForm {
+  position: absolute;
+  top: 110px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  background-color: #fff;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.3);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 5;
+}
+.manualForm h2 {
+  font-size: 18px;
+  margin: 0;
+}
+.manualGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: #475569;
+}
+.formField input,
+.formField select {
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-family: inherit;
+}
+.formFieldFull {
+  grid-column: span 2;
+}
+.manualActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.manualSecondary {
+  border-radius: 999px;
+  padding: 10px 20px;
+  background-color: #f1f5f9;
+  color: #475569;
+  font-weight: 600;
+}
+.manualPrimary {
+  border-radius: 999px;
+  padding: 10px 24px;
+  background-color: #34c38f;
+  color: #fff;
+  font-weight: 600;
+}
+.manualFeedback {
+  font-size: 12px;
+  color: #475569;
+}
+.focusChartCard {
+  position: absolute;
+  top: 724px;
+  left: 405px;
   width: 1000px;
   height: 261px;
+  border-radius: 24px;
+  background-color: #fff;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  padding: 28px 32px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
-.noCurrentData {
-  position: absolute;
-  top: 829px;
-  left: 712px;
-  font-size: 40px;
-  font-weight: 500;
-  color: #4d4a4a;
+.focusChartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
-.weeklyFocusChart {
-  position: absolute;
-  top: 743px;
-  left: 428px;
+.focusChartHeadline {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.focusChartHeadline b {
+  font-size: 20px;
+}
+.focusChartHeadline span {
+  font-size: 12px;
+  color: #6b7280;
+}
+.focusChartRefresh {
+  font-size: 12px;
+  color: #34d399;
+  font-weight: 600;
+  cursor: pointer;
+}
+.focusChartBody {
+  flex: 1;
+  min-height: 160px;
+}
+.chartPlaceholder {
+  height: 100%;
+  border: 1px dashed #cbd5f5;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-size: 13px;
+  background-color: #f8fafc;
 }
 .kakaotalk202506141319546193Icon {
   position: absolute;

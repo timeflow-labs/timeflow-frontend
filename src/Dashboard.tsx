@@ -6,6 +6,7 @@ import {
   useState,
 } from 'react';
 import styles from './Dashboard.module.css';
+import { PieChart, Pie, Cell, Tooltip } from 'recharts';
 import {
   DashboardStreakResponse,
   DashboardTodayResponse,
@@ -27,6 +28,10 @@ type DashboardRoute = 'dashboard' | 'focusmode' | 'schedules' | 'settings';
 
 type DashboardProps = {
   onNavigate: (route: DashboardRoute) => void;
+  currentUser?: {
+    id: string;
+    name?: string | null;
+  } | null;
 };
 
 const gardenImages = [garden1, garden2, garden3, garden4, garden5];
@@ -50,7 +55,11 @@ const formatDate = (value?: string | null) => {
   return new Date(value).toLocaleDateString();
 };
 
-const Dashboard: FunctionComponent<DashboardProps> = ({ onNavigate }) => {
+const Dashboard: FunctionComponent<DashboardProps> = ({
+  onNavigate,
+  currentUser,
+}) => {
+  const greetingName = currentUser?.name || currentUser?.id || 'Gayeon';
   const [todaySummary, setTodaySummary] =
     useState<DashboardTodayResponse | null>(null);
   const [streakInfo, setStreakInfo] =
@@ -179,19 +188,6 @@ const Dashboard: FunctionComponent<DashboardProps> = ({ onNavigate }) => {
     return `Last 7 days - ${weeklyTotals.minutes} mins - ${weeklyTotals.sessions} sessions`;
   }, [weeklySummary, weeklyTotals.minutes, weeklyTotals.sessions]);
 
-
-  const topTags = useMemo(() => {
-    if (todaySummary?.top_tags?.length) {
-      return todaySummary.top_tags.slice(0, 3);
-    }
-    return [
-      { name: 'Add a tag', minutes: 0 },
-      { name: 'Plan a session', minutes: 0 },
-      { name: 'Stay focused', minutes: 0 },
-    ];
-  }, [todaySummary]);
-
-
   const gardenStageIndex = useMemo(() => {
     let stage = 0;
     gardenThresholds.forEach((threshold, index) => {
@@ -211,10 +207,47 @@ const Dashboard: FunctionComponent<DashboardProps> = ({ onNavigate }) => {
   const tagList = (session?: SessionResponse) =>
     session?.tags?.length ? session.tags.join(', ') : 'No tags recorded yet.';
 
+  const tagSlices = useMemo(() => {
+    const totals = new Map<string, number>();
+    if (recentSessions.length) {
+      recentSessions.forEach((session) => {
+        const minutes = session.duration_minutes || 0;
+        if (!minutes) return;
+        const tagList = session.tags?.length ? session.tags : ['Untagged'];
+        tagList.forEach((tag) => {
+          totals.set(tag, (totals.get(tag) ?? 0) + minutes);
+        });
+      });
+    }
+    if (
+      !totals.size &&
+      todaySummary?.top_tags &&
+      todaySummary.top_tags.length
+    ) {
+      todaySummary.top_tags.forEach((tag) => {
+        totals.set(tag.name, (totals.get(tag.name) ?? 0) + tag.minutes);
+      });
+    }
+    const entries = Array.from(totals.entries());
+    if (!entries.length) return [];
+    const colors = ['#34d399', '#fbbf24', '#60a5fa', '#f87171', '#a78bfa'];
+    return entries.map(([tag, minutes], index) => ({
+      id: `${tag}-${index}`,
+      label: tag,
+      minutes,
+      color: colors[index % colors.length],
+    }));
+  }, [recentSessions, todaySummary]);
+
   const lastWeeklyMinutes =
     weeklySummary && weeklySummary.days.length
       ? weeklySummary.days[weeklySummary.days.length - 1].total_minutes
       : 0;
+  const todaysMinutes =
+    todaySummary?.total_minutes !== undefined &&
+    todaySummary?.total_minutes !== null
+      ? todaySummary.total_minutes
+      : lastWeeklyMinutes;
 
   return (
     <div className={styles.dashboard}>
@@ -279,7 +312,7 @@ const Dashboard: FunctionComponent<DashboardProps> = ({ onNavigate }) => {
       <div className={styles.header}>
         <b className={styles.helloGayeon}>
           <span>{`Hello, `}</span>
-          <span className={styles.gayeon}>Gayeon</span>
+          <span className={styles.gayeon}>{greetingName}</span>
           <span className={styles.span}>!</span>
         </b>
       </div>
@@ -305,24 +338,49 @@ const Dashboard: FunctionComponent<DashboardProps> = ({ onNavigate }) => {
           <div className={styles.card2} />
         </div>
         <b className={styles.topFocus}>Top Focus</b>
-        <div className={styles.tagRow}>
-          <div className={styles.tagKey}>1</div>
-          <b className={styles.tagName}>{topTags[0]?.name}</b>
-          <div className={styles.tagValue}>{topTags[0]?.minutes ?? 0}m</div>
+        <div className={styles.pieWrapper}>
+          {tagSlices.length ? (
+            <>
+              <PieChart width={200} height={200} className={styles.pieChart}>
+                <Pie
+                  data={tagSlices}
+                  dataKey="minutes"
+                  nameKey="label"
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={90}
+                  paddingAngle={2}
+                >
+                  {tagSlices.map((slice) => (
+                    <Cell key={slice.id} fill={slice.color} stroke="none" />
+                  ))}
+                </Pie>
+                <Tooltip
+                  formatter={(value) => `${value} mins`}
+                  labelFormatter={(label) => label}
+                />
+              </PieChart>
+              <div className={styles.legend}>
+                {tagSlices.map((slice) => (
+                  <div key={slice.id} className={styles.legendRow}>
+                    <span
+                      className={styles.legendColor}
+                      style={{ backgroundColor: slice.color }}
+                    />
+                    <div className={styles.legendLabel}>
+                      <b>{slice.label}</b>
+                      <span>{slice.minutes} mins</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className={styles.piePlaceholder}>
+              Log sessions to see your focus breakdown.
+            </div>
+          )}
         </div>
-        <div className={styles.tagRow}>
-          <div className={styles.tagKey}>2</div>
-          <b className={styles.tagName}>{topTags[1]?.name}</b>
-          <div className={styles.tagValue}>{topTags[1]?.minutes ?? 0}m</div>
-        </div>
-        <div className={styles.tagRow}>
-          <div className={styles.tagKey}>3</div>
-          <b className={styles.tagName}>{topTags[2]?.name}</b>
-          <div className={styles.tagValue}>{topTags[2]?.minutes ?? 0}m</div>
-        </div>
-        {todaySummary?.highlight_memo && (
-          <div className={styles.highlight}>{todaySummary.highlight_memo}</div>
-        )}
       </div>
       <div className={styles.schedulesCard}>
         <div className={styles.card7}>
@@ -381,60 +439,60 @@ const Dashboard: FunctionComponent<DashboardProps> = ({ onNavigate }) => {
         <div className={styles.card9}>
           <div className={styles.card2} />
         </div>
-        <b className={styles.todaysSchedule2}>Weekly streak</b>
-        <b className={styles.streak}>
-          {streakInfo
-            ? `${streakInfo.current_streak} day streak (best ${streakInfo.longest_streak})`
-            : 'Streak'}
-        </b>
-        <div className={styles.meetingWithHyojeongParent}>
-          <b className={styles.meetingWithHyojeong}>
-            {weeklySummary
-              ? `Week of ${formatDate(weeklySummary.start_date)}`
-              : weeklyError || 'Stay consistent'}
-          </b>
-          <div className={styles.div9}>
-            {weeklySummary
-              ? `${lastWeeklyMinutes} mins today`
-              : isWeeklyLoading
-              ? 'Loading weekly data...'
-              : ''}
+        <div className={styles.weeklyContent}>
+          <div className={styles.weeklyHeader}>
+            <b className={styles.todaysSchedule2}>Weekly streak</b>
+            <button
+              type="button"
+              className={styles.seeAll2}
+              style={unstyledButton}
+              onClick={handleFetchStreak}
+              aria-live="polite"
+            >
+              {isStreakLoading ? 'Loading...' : 'Refresh'}
+            </button>
           </div>
-          <div className={styles.atSunsetRoad2}>
-            {weeklySummary
-              ? `${weeklySummary.days.reduce(
-                  (sum, day) => sum + day.session_count,
-                  0,
-                )} sessions in the last 7 days`
-              : ''}
+          <div className={styles.streak}>
+            {streakInfo
+              ? `${streakInfo.current_streak} day streak (best ${streakInfo.longest_streak})`
+              : streakError || 'Stay consistent to extend your streak.'}
           </div>
-          <div className={styles.groupChild} />
-        </div>
-        <button
-          type="button"
-          className={styles.seeAll2}
-          style={unstyledButton}
-          onClick={handleFetchStreak}
-          aria-live="polite"
-        >
-          {isStreakLoading ? 'Loading...' : 'Refresh'}
-        </button>
-        <div className={styles.checkOperationAtGigaFactorGroup}>
-          <b className={styles.meetingWithHyojeong}>
-            {weeklyError || 'Track your learning path'}
-          </b>
-          <div className={styles.div9}>
-            {isWeeklyLoading ? 'Loading weekly data...' : ''}
+          <div className={styles.weeklySummaryBox}>
+            <b>
+              {weeklySummary
+                ? `Week of ${formatDate(weeklySummary.start_date)}`
+                : weeklyError || 'Week overview unavailable'}
+            </b>
+            <span>
+              {weeklySummary
+                ? `${lastWeeklyMinutes} mins today`
+                : isWeeklyLoading
+                ? 'Loading weekly data...'
+                : todaySummary
+                ? `${todaysMinutes} mins logged`
+                : '0 mins today'}
+            </span>
+            <span>
+              {weeklySummary
+                ? `${weeklySummary.days.reduce(
+                    (sum, day) => sum + day.session_count,
+                    0,
+                  )} sessions in the last 7 days`
+                : ''}
+            </span>
+            <span className={styles.weeklyPathLine}>
+              Track your learning path
+            </span>
+            <span>
+              {streakInfo?.last_study_date
+                ? `Last studied on ${formatDate(streakInfo.last_study_date)}`
+                : ''}
+            </span>
           </div>
-          <div className={styles.atSunsetRoad2}>
-            {streakInfo?.last_study_date
-              ? `Last studied on ${formatDate(streakInfo.last_study_date)}`
-              : ''}
-          </div>
-          <div className={styles.groupItem} />
         </div>
       </div>
       <b className={styles.areYouReady}>{weeklyHeadline}</b>
+      <b className={styles.todayFocusHeader}>Today's focus</b>
       <div className={styles.div11}>{todayTotalText}</div>
       <div className={styles.div12}>
         {todaySummary

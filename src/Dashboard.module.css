@@ -150,18 +150,6 @@
 .span {
   white-space: pre-wrap;
 }
-.vectorIcon {
-  position: absolute;
-  height: 68.97%;
-  width: 1.91%;
-  top: 17.24%;
-  right: 0.01%;
-  bottom: 13.79%;
-  left: 98.08%;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-}
 .myGarden {
   position: absolute;
   top: 144px;
@@ -192,20 +180,6 @@
   border-radius: 20px;
   background-color: #fff;
 }
-.activitiesCard2 {
-  position: absolute;
-  top: 183px;
-  left: 1163px;
-  width: 244px;
-  height: 265px;
-}
-.card3 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 244px;
-  height: 265px;
-}
 .topProductsCard {
   position: absolute;
   top: 634px;
@@ -221,113 +195,6 @@
   width: 482px;
   height: 256px;
 }
-.div {
-  position: absolute;
-  top: 72px;
-  left: 245.02px;
-  width: 63.3px;
-  height: 36px;
-}
-.child {
-  position: absolute;
-  top: 3px;
-  left: 0px;
-  border-radius: 50%;
-  background-color: #98d89e;
-  width: 11px;
-  height: 11px;
-}
-.adsp {
-  position: absolute;
-  top: 0px;
-  left: 21.09px;
-  display: inline-block;
-  width: 42.2px;
-}
-.div2 {
-  position: absolute;
-  top: 22px;
-  left: 21.09px;
-  font-size: 12px;
-  font-family: Lato;
-  color: #858585;
-  display: inline-block;
-  width: 24.1px;
-}
-.mayJune2021Wrapper {
-  position: absolute;
-  top: 31px;
-  left: 328.36px;
-  width: 97.4px;
-  height: 15px;
-  font-size: 12px;
-  color: #858585;
-}
-.mayJune {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  display: inline-block;
-  width: 97.4px;
-}
-.vectorIcon2 {
-  position: absolute;
-  height: 1.95%;
-  width: 1.66%;
-  top: 14.45%;
-  right: 8.97%;
-  bottom: 83.59%;
-  left: 89.38%;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-}
-.div3 {
-  position: absolute;
-  top: 129px;
-  left: 245.02px;
-  width: 56.2px;
-  height: 36px;
-}
-.item {
-  position: absolute;
-  top: 3px;
-  left: 0px;
-  border-radius: 50%;
-  background-color: #f6dc7d;
-  width: 11px;
-  height: 11px;
-}
-.aibt {
-  position: absolute;
-  top: 0px;
-  left: 21.09px;
-  display: inline-block;
-  width: 35.1px;
-}
-.div5 {
-  position: absolute;
-  top: 186px;
-  left: 245.02px;
-  width: 62.3px;
-  height: 36px;
-}
-.inner {
-  position: absolute;
-  top: 3px;
-  left: 0px;
-  border-radius: 50%;
-  background-color: #ee8484;
-  width: 11px;
-  height: 11px;
-}
-.sqld {
-  position: absolute;
-  top: 0px;
-  left: 21.09px;
-  display: inline-block;
-  width: 41.2px;
-}
 .topFocus {
   position: absolute;
   top: 30px;
@@ -335,14 +202,6 @@
   font-size: 18px;
   display: inline-block;
   width: 96.4px;
-}
-.pieChartIcon {
-  position: absolute;
-  top: 82px;
-  left: 60.25px;
-  width: 134.6px;
-  height: 134px;
-  object-fit: contain;
 }
 .schedulesCard {
   position: absolute;
@@ -432,19 +291,6 @@
   width: 41px;
   height: 15px;
 }
-.vectorIcon3 {
-  position: absolute;
-  height: 1.31%;
-  width: 1.04%;
-  top: 64.2%;
-  right: 6.25%;
-  bottom: 34.48%;
-  left: 92.71%;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-  object-fit: contain;
-}
 .checkOperationAtGigaFactorParent {
   position: absolute;
   top: 509px;
@@ -484,137 +330,70 @@
 }
 .schedulesCard2 {
   position: absolute;
-  top: 207px;
-  left: 927px;
+  top: 634px;
+  left: 941px;
   width: 480px;
-  height: 683px;
-  font-size: 12px;
+  height: 256px;
+  font-size: 14px;
 }
 .card9 {
   position: absolute;
-  top: 427px;
+  top: 0px;
   left: 0px;
-  width: 480px;
-  height: 256px;
+  width: 100%;
+  height: 100%;
+}
+.weeklyContent {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 32px 40px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: #0f172a;
+}
+.weeklyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .todaysSchedule2 {
-  position: absolute;
-  top: 457px;
-  left: 40px;
   font-size: 18px;
 }
 .streak {
-  position: absolute;
-  top: 0px;
-  left: 270px;
-  font-size: 18px;
-}
-.meetingWithHyojeongParent {
-  position: absolute;
-  top: 504px;
-  left: 40px;
-  width: 164px;
-  height: 66px;
-  color: #999;
-  font-family: Lato;
-}
-.meetingWithHyojeong {
-  position: absolute;
-  top: 3px;
-  left: 15px;
   font-size: 14px;
   color: #666;
 }
-.div9 {
-  position: absolute;
-  top: 25px;
-  left: 15px;
-}
-.atSunsetRoad2 {
-  position: absolute;
-  top: 44px;
-  left: 15px;
-}
 .seeAll2 {
-  position: absolute;
-  top: 461px;
-  left: 398px;
-  color: #858585;
+  font-size: 12px;
+  color: #34d399;
 }
-.vectorIcon4 {
-  position: absolute;
-  height: 1.17%;
-  width: 1.04%;
-  top: 68.08%;
-  right: 6.25%;
-  bottom: 30.75%;
-  left: 92.71%;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-  object-fit: contain;
+.weeklySummaryBox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  color: #111;
 }
-.checkOperationAtGigaFactorGroup {
-  position: absolute;
-  top: 583px;
-  left: 40px;
-  width: 227px;
-  height: 66px;
-  color: #999;
-  font-family: Lato;
+.weeklySummaryBox span {
+  font-size: 12px;
+  color: #4b5563;
+}
+.weeklyPathLine {
+  font-weight: 600;
+  color: #111;
 }
 .areYouReady {
   position: absolute;
   top: 79px;
   left: 407px;
 }
-.trophyIcon {
+.todayFocusHeader {
   position: absolute;
-  top: 665px;
-  left: 415px;
-  width: 24px;
-  height: 21px;
-  object-fit: contain;
-}
-.wavingHand {
-  position: absolute;
-  top: calc(50% - 460px);
-  left: calc(50% - 130px);
-  width: 28px;
-  height: 24px;
-  overflow: hidden;
-}
-.wavingHandIcon {
-  position: absolute;
-  top: calc(50% - 12.26px);
-  left: calc(50% - 12.14px);
-  width: 24.9px;
-  height: 24.5px;
-  object-fit: cover;
-}
-.smilingFaceWithSunglasses {
-  position: absolute;
-  top: 81px;
-  left: 963px;
-  width: 26px;
-  height: 26px;
-  overflow: hidden;
-}
-.smilingFaceWithSunglassesF {
-  position: absolute;
-  top: calc(50% - 12.51px);
-  left: calc(50% - 12.38px);
-  width: 24.8px;
-  height: 25px;
-  object-fit: cover;
-}
-.seedlingIcon {
-  position: absolute;
-  top: 135px;
-  left: 542px;
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
+  top: 215px;
+  left: 1194px;
+  font-size: 18px;
 }
 .div11 {
   position: absolute;
@@ -684,36 +463,51 @@
 .cardTags {
   color: #6b7280;
 }
-.tagRow {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 10px;
-  font-size: 13px;
-}
-.tagKey {
-  width: 22px;
-  height: 22px;
-  border-radius: 6px;
-  background-color: #f0f4ff;
-  color: #3b82f6;
+.pieWrapper {
+  margin-top: 24px;
+  height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  gap: 32px;
 }
-.tagName {
-  flex: 1;
+.pieChart {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  margin-left: 100px;
 }
-.tagValue {
-  font-weight: 600;
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+}
+.legendRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.legendColor {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+}
+.legendLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   color: #0f172a;
 }
-.highlight {
-  margin-top: 16px;
-  font-size: 12px;
+.legendLabel span {
   color: #6b7280;
-  font-style: italic;
+}
+.piePlaceholder {
+  width: 100%;
+  text-align: center;
+  color: #6b7280;
+  font-size: 12px;
 }
 .gardenImage {
   width: 200px;

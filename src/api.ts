@@ -5,6 +5,12 @@ const FALLBACK_API_BASE_URL = import.meta.env.DEV
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL ?? FALLBACK_API_BASE_URL;
 
+let currentUserId: string | null = null;
+
+export const setApiUserId = (userId: string | null) => {
+  currentUserId = userId;
+};
+
 const buildQueryString = (
   params: Record<string, string | number | undefined>,
 ): string => {
@@ -25,6 +31,10 @@ const buildQueryString = (
 
 async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   const headers = new Headers(options.headers);
+
+  if (currentUserId && !headers.has('X-User-Id')) {
+    headers.set('X-User-Id', currentUserId);
+  }
 
   if (options.body && !headers.has('Content-Type')) {
     headers.set('Content-Type', 'application/json');

@@ -1,10 +1,10 @@
 import { FormEvent, FunctionComponent, useState } from 'react';
 import styles from './SignIn.module.css';
-import { signIn } from './api';
+import { signIn, type SignInResponse } from './api';
 import { unstyledButton } from './buttonResetStyle';
 
 type SignInProps = {
-  onSignIn: () => void;
+  onSignIn: (user: SignInResponse) => void;
   onGoToSignUp: () => void;
 };
 
@@ -35,11 +35,11 @@ const SignIn: FunctionComponent<SignInProps> = ({
     setErrorMessage(null);
 
     try {
-      await signIn({
+      const user = await signIn({
         user_id: userId.trim(),
         password,
       });
-      onSignIn();
+      onSignIn(user);
     } catch (error) {
       console.error(error);
       setErrorMessage('Sign-in failed. Check your ID and password.');
