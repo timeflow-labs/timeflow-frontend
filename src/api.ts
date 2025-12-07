@@ -1,10 +1,8 @@
 
-const FALLBACK_API_BASE_URL = import.meta.env.DEV
-  ? '/api/v1'
-  : 'http://localhost:8000/api/v1';
+const HARDCODED_API_BASE_URL = 'http://43.201.250.206:8000/api/v1';
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ?? FALLBACK_API_BASE_URL;
+  import.meta.env.VITE_API_BASE_URL ?? HARDCODED_API_BASE_URL;
 
 let currentUserId: string | null = null;
 

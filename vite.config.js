@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
 
   const proxyTarget = (() => {
     const rawBase = env.VITE_API_BASE_URL
-    if (!rawBase) return 'http://localhost:8000'
+    if (!rawBase) return 'http://43.201.250.206:8000'
     try {
       return new URL(rawBase).origin
     } catch {
